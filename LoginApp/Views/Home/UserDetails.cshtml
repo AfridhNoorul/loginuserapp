@@ -1,0 +1,61 @@
+﻿@using LoginApp.Models;
+
+
+@model UserDetailsModel
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    </head>
+
+    <script>
+        function SubmitForm() {
+            var model = {};
+            model.MathsMarks = parseInt($("#MathsMarks").val());
+            $.ajax({
+                type: "Post",
+                url: '@Url.Action("SaveUserDetails", "Home")',
+                data: JSON.stringify(model),
+                contentType: "application/json",
+                dataType: "json",
+                traditional: true,
+                success: function (response) {
+                    alert("saved Successfully");
+                },
+                failure: function (response) {
+                    alert("error Occured");
+                }
+            });
+            return false;
+        };
+
+        function printForm() {
+            window.print();
+            return false;
+        }
+
+    </script>
+
+
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                    Maths
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.MathsMarks, new { @class = "form-control", placeholder = "Marks" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Science
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.ScienceMarks, new { @class = "form-control", placeholder = "Marks" })
+                </td>
+            </tr>
+        </table>
+        <input type="button" data-title="Reset" onclick="return SubmitForm();" class="btn btn-secondary pdButton" value="Submit" />
+        <input type="button" data-title="Reset" onclick="return printForm();" class="btn btn-secondary pdButton" value="Print" />
+
+    </div>

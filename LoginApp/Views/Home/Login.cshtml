@@ -1,0 +1,38 @@
+﻿@using LoginApp.Models;
+
+
+@model LoginModel
+  
+    <script>
+
+    function SubmitForm() {
+              window.location.href = '@Url.Action("UserDetails", "Home")';
+        return false;
+    };
+
+    </script>
+
+<div>
+    <table>
+
+        <tr>
+            <td>
+                Registration Id
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.RegistrationId, new { @class = "form-control", placeholder = "Registration Id" })
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Password" })
+            </td>
+        </tr>
+    </table>
+    <input type="button" data-title="Reset" onclick="return SubmitForm();" class="btn btn-secondary pdButton" value="Login" />
+
+</div>

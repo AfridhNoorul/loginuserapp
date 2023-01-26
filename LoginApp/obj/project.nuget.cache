@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5WNdVH25hRd99VuIG39CmYjW4LC20PFE1L1px2xVrlFGL5cvvrmUP1KhGBjTQGtItSKasvD7LKEx6LdAWq/DBA==",
+  "success": true,
+  "projectFilePath": "C:\\Project Extra\\LoginApp\\LoginApp\\LoginApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\panka\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
